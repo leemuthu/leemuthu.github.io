@@ -16,7 +16,9 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" as="style">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -27,6 +29,7 @@
   --ink2: #3a3830;
   --ink3: #6e685c;
   --red: #e8321a;
+  --red-deep: #c02813;
   --display: 'Bebas Neue', Impact, sans-serif;
   --body: 'Familjen Grotesk', sans-serif;
 }
@@ -57,7 +60,7 @@ nav {
 .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 3rem; animation: fadeUp 0.5s 0.16s ease both; }
 .hero-sub { font-size: 1.05rem; color: var(--ink2); max-width: 400px; line-height: 1.7; }
 .hero-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; flex-shrink: 0; }
-.btn-red { background: var(--red); color: var(--white); padding: 1rem 2.5rem; text-decoration: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; transition: opacity 0.2s; display: inline-block; }
+.btn-red { background: var(--red-deep); color: var(--white); padding: 1rem 2.5rem; text-decoration: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; transition: opacity 0.2s; display: inline-block; }
 .btn-red:hover { opacity: 0.85; }
 .btn-text { color: var(--ink2); text-decoration: none; font-size: 0.82rem; font-weight: 500; transition: color 0.2s; }
 .btn-text:hover { color: var(--red); }
@@ -93,8 +96,6 @@ nav {
 .portfolio-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 4rem; }
 .portfolio-head h2 { font-family: var(--display); font-size: clamp(3rem, 6vw, 5.5rem); letter-spacing: 0.03em; line-height: 0.9; color: var(--white); }
 .portfolio-head h2 span { color: var(--red); }
-.portfolio-head a { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(248,246,242,0.35); text-decoration: none; transition: color 0.2s; }
-.portfolio-head a:hover { color: var(--red); }
 .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #222018; border: 1px solid #222018; }
 .port-card { background: #161410; text-decoration: none; display: block; transition: background 0.2s; position: relative; overflow: hidden; }
 .port-card:hover { background: #1e1c18; }
@@ -105,12 +106,12 @@ nav {
 .port-thumb-label { position: absolute; top: 1rem; left: 1rem; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(248,246,242,0.6); background: rgba(15,14,12,0.75); padding: 4px 10px; font-weight: 600; }
 .port-info { padding: 1.5rem; }
 .port-title { font-family: var(--display); font-size: 1.5rem; letter-spacing: 0.04em; color: var(--white); margin-bottom: 0.35rem; }
-.port-type { font-size: 0.75rem; color: rgba(248,246,242,0.3); }
+.port-type { font-size: 0.75rem; color: rgba(248,246,242,0.55); }
 .port-arrow { position: absolute; top: 1rem; right: 1rem; color: var(--red); font-size: 1.1rem; opacity: 0; transform: translate(-4px, 4px); transition: all 0.2s; }
 
 .about { padding: 8rem 3rem; max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
 .about-img-wrap { position: relative; }
-.about-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; display: block; }
+.about-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: center; display: block; }
 .about-img-tag { position: absolute; bottom: 0; left: 0; right: 0; background: var(--red); padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
 .img-tag-name { font-family: var(--display); font-size: 1.1rem; letter-spacing: 0.06em; color: var(--white); }
 .img-tag-role { font-size: 0.7rem; color: rgba(248,246,242,0.7); font-weight: 500; letter-spacing: 0.05em; }
@@ -150,11 +151,6 @@ nav {
 .cta-inner { max-width: 800px; margin: 0 auto; }
 .cta-inner h2 { font-family: var(--display); font-size: clamp(3.5rem, 8vw, 7rem); letter-spacing: 0.03em; line-height: 0.88; color: var(--white); margin-bottom: 1.5rem; }
 .cta-inner p { font-size: 1rem; color: rgba(248,246,242,0.75); margin-bottom: 2.5rem; line-height: 1.7; }
-.cta-form { display: flex; gap: 0; max-width: 480px; margin: 0 auto; }
-.cta-input { flex: 1; padding: 1rem 1.25rem; background: rgba(248,246,242,0.15); border: 1px solid rgba(248,246,242,0.3); border-right: none; color: var(--white); font-family: var(--body); font-size: 0.9rem; outline: none; }
-.cta-input::placeholder { color: rgba(248,246,242,0.5); }
-.cta-btn { padding: 1rem 1.75rem; background: var(--ink); color: var(--white); border: none; font-family: var(--display); font-size: 1rem; letter-spacing: 0.08em; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
-.cta-btn:hover { background: #1a1814; }
 
 .inquiry-form {
   max-width: 640px; margin: 0 auto;
@@ -189,7 +185,7 @@ nav {
 .inquiry-textarea { resize: vertical; min-height: 90px; font-family: var(--body); }
 .inquiry-submit {
   width: 100%; margin-top: 0.5rem;
-  padding: 1rem; background: var(--red); color: var(--white);
+  padding: 1rem; background: var(--red-deep); color: var(--white);
   border: none; border-radius: 4px;
   font-family: var(--display); font-size: 1rem; letter-spacing: 0.05em;
   cursor: pointer; transition: opacity 0.2s;
@@ -202,27 +198,6 @@ nav {
 .inquiry-success span { color: #ffe14d; }
 .cta-note { font-size: 0.75rem; color: rgba(248,246,242,0.5); margin-top: 1rem; }
 
-.btn-book-big {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--ink); color: var(--white);
-  padding: 1.15rem 2.75rem; text-decoration: none;
-  font-family: var(--display); font-size: 1.15rem;
-  letter-spacing: 0.03em; border-radius: 6px;
-  transition: opacity 0.2s; margin: 0.5rem 0 2rem;
-}
-.btn-book-big:hover { opacity: 0.85; }
-.or-divider {
-  display: flex; align-items: center; gap: 1rem;
-  max-width: 480px; margin: 0 auto 2rem;
-}
-.or-divider::before, .or-divider::after {
-  content: ''; flex: 1; height: 1px; background: rgba(15,14,12,0.2);
-}
-.or-divider span {
-  font-size: 0.72rem; text-transform: uppercase;
-  letter-spacing: 0.1em; color: rgba(15,14,12,0.5);
-  font-weight: 600; white-space: nowrap;
-}
 .booking-embed-wrap {
   background: rgba(248,246,242,0.05);
   border: 1px solid rgba(248,246,242,0.15);
@@ -232,9 +207,9 @@ nav {
 footer { background: var(--ink); padding: 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-logo { font-family: var(--display); font-size: 1.2rem; letter-spacing: 0.06em; color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 8px; }
 .footer-links { display: flex; gap: 2rem; list-style: none; }
-.footer-links a { color: rgba(248,246,242,0.3); text-decoration: none; font-size: 0.78rem; font-weight: 500; transition: color 0.2s; }
+.footer-links a { color: rgba(248,246,242,0.55); text-decoration: none; font-size: 0.78rem; font-weight: 500; transition: color 0.2s; }
 .footer-links a:hover { color: var(--white); }
-.footer-copy { font-size: 0.72rem; color: rgba(248,246,242,0.2); }
+.footer-copy { font-size: 0.72rem; color: rgba(248,246,242,0.5); }
 
 @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
@@ -262,8 +237,6 @@ footer { background: var(--ink); padding: 3rem; display: flex; align-items: cent
   .testimonials { padding: 5rem 1.25rem; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .cta { padding: 5rem 1.25rem; }
-  .cta-form { flex-direction: column; }
-  .cta-input { border-right: 1px solid rgba(248,246,242,0.3); }
   .inquiry-form { padding: 1.5rem; }
   .inquiry-row { grid-template-columns: 1fr; }
   .inquiry-field.full { grid-column: span 1; }
@@ -333,36 +306,36 @@ footer { background: var(--ink); padding: 3rem; display: flex; align-items: cent
   <div class="portfolio-inner">
     <div class="portfolio-head reveal">
       <h2>RECENT<br><span>WORK.</span></h2>
-      <span style="font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(248,246,242,0.35)">6 Projects</span>
+      <span style="font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(248,246,242,0.55)">6 Projects</span>
     </div>
     <div class="portfolio-grid reveal">
       <a href="https://muthucreatives.com/saas.html" target="_blank" class="port-card">
-        <div class="port-thumb" style="background:#0e1318"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=60&fit=crop&auto=format" alt="Flowline" loading="lazy" width="500" height="375"><span class="port-thumb-label">SaaS</span></div>
+        <div class="port-thumb" style="background:#0e1318"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=420&q=60&fit=crop&auto=format" alt="Flowline" loading="lazy" width="420" height="315"><span class="port-thumb-label">SaaS</span></div>
         <div class="port-info"><div class="port-title">FLOWLINE</div><div class="port-type">SaaS Landing Page / Workflow Automation</div></div>
         <span class="port-arrow">↗</span>
       </a>
       <a href="https://muthucreatives.com/salon-website.html" target="_blank" class="port-card">
-        <div class="port-thumb" style="background:#1a1510"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=60&fit=crop&auto=format" alt="Maison Lumiere" loading="lazy" width="500" height="375"><span class="port-thumb-label">Small Business</span></div>
+        <div class="port-thumb" style="background:#1a1510"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=420&q=60&fit=crop&auto=format" alt="Maison Lumiere" loading="lazy" width="420" height="315"><span class="port-thumb-label">Small Business</span></div>
         <div class="port-info"><div class="port-title">MAISON LUMIÈRE</div><div class="port-type">Business Website / Boutique Salon</div></div>
         <span class="port-arrow">↗</span>
       </a>
       <a href="https://muthucreatives.com/restaurant-website.html" target="_blank" class="port-card">
-        <div class="port-thumb" style="background:#0e0c0a"><img src="https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?w=500&q=60&fit=crop&auto=format" alt="Ember and Rye" loading="lazy" width="500" height="375"><span class="port-thumb-label">Restaurant</span></div>
+        <div class="port-thumb" style="background:#0e0c0a"><img src="https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?w=420&q=60&fit=crop&auto=format" alt="Ember and Rye" loading="lazy" width="420" height="315"><span class="port-thumb-label">Restaurant</span></div>
         <div class="port-info"><div class="port-title">EMBER & RYE</div><div class="port-type">Business Website / Restaurant</div></div>
         <span class="port-arrow">↗</span>
       </a>
       <a href="https://muthucreatives.com/dashboard.html" target="_blank" class="port-card">
-        <div class="port-thumb" style="background:#080b0f"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=60&fit=crop&auto=format" alt="Apex Dashboard" loading="lazy" width="500" height="375"><span class="port-thumb-label">Web App</span></div>
+        <div class="port-thumb" style="background:#080b0f"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=420&q=60&fit=crop&auto=format" alt="Apex Dashboard" loading="lazy" width="420" height="315"><span class="port-thumb-label">Web App</span></div>
         <div class="port-info"><div class="port-title">APEX ANALYTICS</div><div class="port-type">Web Application / SaaS Dashboard</div></div>
         <span class="port-arrow">↗</span>
       </a>
       <a href="https://muthucreatives.com/automation-ui.html" target="_blank" class="port-card">
-        <div class="port-thumb" style="background:#0f1318"><img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=500&q=60&fit=crop&auto=format" alt="FlowForge" loading="lazy" width="500" height="375"><span class="port-thumb-label">Automation</span></div>
+        <div class="port-thumb" style="background:#0f1318"><img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=420&q=60&fit=crop&auto=format" alt="FlowForge" loading="lazy" width="420" height="315"><span class="port-thumb-label">Automation</span></div>
         <div class="port-info"><div class="port-title">FLOWFORGE</div><div class="port-type">Web Application / Workflow Builder</div></div>
         <span class="port-arrow">↗</span>
       </a>
       <a href="https://muthucreatives.com/creator-linkinbio.html" target="_blank" class="port-card">
-        <div class="port-thumb" style="background:#1a1218"><img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=500&q=60&fit=crop&auto=format" alt="Creator Bio" loading="lazy" width="500" height="375"><span class="port-thumb-label">Landing Page</span></div>
+        <div class="port-thumb" style="background:#1a1218"><img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=420&q=60&fit=crop&auto=format" alt="Creator Bio" loading="lazy" width="420" height="315"><span class="port-thumb-label">Landing Page</span></div>
         <div class="port-info"><div class="port-title">MAYA VOSS</div><div class="port-type">Landing Page / Creator Link in Bio</div></div>
         <span class="port-arrow">↗</span>
       </a>
@@ -372,7 +345,10 @@ footer { background: var(--ink); padding: 3rem; display: flex; align-items: cent
 
 <section class="about" id="about">
   <div class="about-img-wrap reveal">
-    <img class="about-img" src="headshot.jpg" alt="Lee Muthu, founder of Muthu Creatives" width="900" height="1200" loading="lazy">
+    <picture>
+      <source srcset="headshot.webp" type="image/webp">
+      <img class="about-img" src="headshot.jpg" alt="Lee Muthu, founder of Muthu Creatives" width="900" height="900" loading="lazy">
+    </picture>
     <div class="about-img-tag">
       <div><div class="img-tag-name">LEE MUTHU</div><div class="img-tag-role">Founder & Lead Developer</div></div>
       <div class="img-tag-badge">Houston, TX</div>
