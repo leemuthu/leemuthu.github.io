@@ -89,9 +89,8 @@ body {
   position: relative;
 }
 
-/* Ambient background glows */
 .ambient-glow {
-  position: fixed;
+  position: absolute;
   border-radius: 50%;
   filter: blur(90px);
   pointer-events: none;
@@ -104,7 +103,6 @@ body {
 .glow-2 { width: 500px; height: 500px; background: var(--tertiary-container); top: 40vh; right: -150px; opacity: 0.14; }
 .glow-3 { width: 450px; height: 450px; background: var(--secondary-container); bottom: 5vh; left: 10vw; opacity: 0.1; }
 
-/* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 1.1rem 2rem;
@@ -214,7 +212,6 @@ main { position: relative; z-index: 1; }
 .cursor-glow.hovering { width: 56px; height: 56px; background: radial-gradient(circle, rgba(255,179,173,0.35) 0%, rgba(255,179,173,0) 70%); }
 @media (hover: none), (max-width: 900px) { .cursor-glow { display: none; } }
 
-/* HERO */
 .hero {
   max-width: 1200px; margin: 0 auto;
   padding: 10rem 2rem 6rem;
@@ -321,7 +318,6 @@ main { position: relative; z-index: 1; }
   letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-surface-muted);
 }
 
-/* SECTION SHARED */
 .section-eyebrow {
   font-family: var(--font-label); font-size: 0.72rem; font-weight: 600;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary);
@@ -335,7 +331,6 @@ main { position: relative; z-index: 1; }
 }
 .section-head p { font-size: 1.02rem; color: var(--on-surface-variant); line-height: 1.7; }
 
-/* GLASS PANEL BASE */
 .glass-panel {
   background: rgba(42,42,42,0.4);
   backdrop-filter: blur(13px);
@@ -343,7 +338,6 @@ main { position: relative; z-index: 1; }
   border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* SERVICES */
 .services { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
 .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 .svc-card {
@@ -363,7 +357,6 @@ main { position: relative; z-index: 1; }
 }
 .svc-card:hover .svc-arrow { background: var(--primary-container); border-color: var(--primary-container); transform: translateX(4px); }
 
-/* PORTFOLIO */
 .portfolio { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
 .portfolio-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
 .portfolio-count { font-family: var(--font-label); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-surface-muted); }
@@ -388,7 +381,6 @@ main { position: relative; z-index: 1; }
 .port-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--on-surface); margin-bottom: 0.35rem; letter-spacing: -0.01em; }
 .port-type { font-size: 0.8rem; color: var(--on-surface-muted); }
 
-/* ABOUT */
 .about { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 4rem; align-items: center; }
 .about-img-wrap { position: relative; border-radius: var(--r-xl); overflow: hidden; }
 .about-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
@@ -422,7 +414,6 @@ main { position: relative; z-index: 1; }
 }
 .skill-pill:hover { border-color: rgba(255,179,173,0.35); color: var(--primary); }
 
-/* PROCESS */
 .process { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
 .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 .process-step { padding: 2rem; border-radius: var(--r-xl); }
@@ -430,7 +421,6 @@ main { position: relative; z-index: 1; }
 .step-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--on-surface); margin-bottom: 0.65rem; }
 .step-desc { font-size: 0.85rem; color: var(--on-surface-variant); line-height: 1.65; }
 
-/* TESTIMONIALS */
 .testimonials { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; text-align: center; }
 .testimonials .section-head { margin-left: auto; margin-right: auto; text-align: center; }
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; text-align: left; }
@@ -445,7 +435,6 @@ main { position: relative; z-index: 1; }
 .testi-name { font-size: 0.88rem; font-weight: 700; color: var(--on-surface); }
 .testi-role { font-size: 0.75rem; color: var(--on-surface-muted); margin-top: 1px; }
 
-/* CONTACT */
 .contact { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 7rem; }
 .contact-head { text-align: center; margin-bottom: 3.5rem; }
 .contact-head h2 {
@@ -496,7 +485,6 @@ main { position: relative; z-index: 1; }
 .contact-note a { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--on-surface); text-decoration: none; transition: color 0.2s; }
 .contact-note a:hover { color: var(--primary); }
 
-/* FOOTER */
 footer {
   border-top: 1px solid rgba(255,255,255,0.06);
   padding: 3rem 2rem;
